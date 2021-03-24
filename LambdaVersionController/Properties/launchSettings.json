@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LambdaVersionController": {
+      "commandName": "Project",
+      "commandLineArgs": "--region eu-west-1 --count 2 --debug"
+    }
+  }
+}
