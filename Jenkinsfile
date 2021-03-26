@@ -12,6 +12,7 @@ pipeline {
     parameters { 
           string(name: 'COUNT', defaultValue: '2', description: 'How many versions do you want to backup?')
           string(name: 'REGION', defaultValue: 'eu-west-1', description: 'AWS Region')
+          string(name: 'PROFILE', defaultValue: 'default', description: 'AWS Profile')
     }
     
     environment{
@@ -55,7 +56,7 @@ pipeline {
                 dir ('repo') {
                     dir ('Release') {
                         sh "ls -la"
-                        sh "./LambdaVersionController --region ${REGION} --count ${COUNT}"
+                        sh "./LambdaVersionController --region ${REGION} --count ${COUNT} --profile ${PROFILE}"
                     }
                 }
             }
